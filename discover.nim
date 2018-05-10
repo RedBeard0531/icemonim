@@ -66,7 +66,7 @@ proc getScheduler*: Scheduler =
       result &= sched
 
   sendBroadcast()
-  result = getReplies().sortedByIt((it.version, -int(it.startTime)))[0]
+  result = getReplies().sortedByIt((it.version, -int(it.startTime)))[^1]
   echo fmt"Best scheduler is {result.ip}:{result.port}"
 
 when isMainModule:

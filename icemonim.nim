@@ -189,7 +189,7 @@ when isMainModule:
     var msg = buf.parseMsg
     if msg.kind == Stats:
       hostTable.updateHost(msg)
-      echo "Host:{msg.host}\n{msg.msg}\n".fmt
+      echo "{getTime()}:\nHost:{msg.host}\n{msg.msg}\n".fmt
     else:
       if msg.host.kind == MaybeHostKind.Unknown:
         var tmp = hostTable.getHost(msg.host.id)
